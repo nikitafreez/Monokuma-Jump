@@ -11,7 +11,7 @@ public class MonokumaScript : MonoBehaviour
     float horizontal;
     public Rigidbody2D RigidBody;
     public Transform ballPos;
-    public static Text test;
+    public Text BestScore;
     
     void Start()
     {
@@ -20,6 +20,7 @@ public class MonokumaScript : MonoBehaviour
             instance = this;
         }
         Time.timeScale = 0f;
+        BestScore.text = $"Score: {UIScript.instance.scoreMax}";
     }
 
 
@@ -58,7 +59,6 @@ public class MonokumaScript : MonoBehaviour
         if (collision.collider.name == "KillBox")
         {
             SceneManager.LoadScene(0);
-            test.text = "shiiiiit";
         }
     }
 }
